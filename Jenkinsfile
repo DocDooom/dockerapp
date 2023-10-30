@@ -8,13 +8,13 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh docker build -t dockerapp_flask .
-                sh docker run -d -p 5000:5000 dockerapp_flask
+                sh 'docker build -t dockerapp_flask .'
+                sh 'docker run -d -p 5000:5000 dockerapp_flask'
             }
         }
         stage('Deploy') {
             steps {
-                sh echo 'Reached Deploy stage'
+                sh 'echo "Reached Deploy stage"'
             }
         }
     }
