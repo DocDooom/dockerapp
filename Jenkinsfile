@@ -3,19 +3,18 @@ pipeline {
     stages{
         stage('Test') {
             steps {
-                sh 'ls -a'
                 sh 'pwd'
             }
         }
         stage('Build') {
             steps {
-                sh 'touch example.txt'
+                sh docker build -t dockerapp_flask .
+                sh docker run -d -p 5000:5000 dockerapp_flask
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo hello >> example.txt'
-                sh 'cat example.txt'
+                sh echo 'Reached Deploy stage'
             }
         }
     }
