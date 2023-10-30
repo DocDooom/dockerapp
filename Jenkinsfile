@@ -1,21 +1,12 @@
 pipeline {
     agent any
-    stages{
-        stage('Test') {
+
+    stages {
+        stage('Docker Compose Up') {
             steps {
-                sh 'pwd'
-            }
-        }
-        stage('Build') {
-            steps {
-                sh 'docker build -t dockerapp_flask .'
-                sh 'docker run -p 5000:5000 dockerapp_flask'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'echo "Reached Deploy stage"'
-                sh 'docker ps'
+                script {
+                    sh "docker-compose -f docker-compose.yml up -d"
+                }
             }
         }
     }
