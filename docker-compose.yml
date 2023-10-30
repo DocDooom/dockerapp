@@ -14,5 +14,3 @@ services:
     build: /nginx
     ports:
       - "80:80"
-    depends-on:
-      - flask-app
