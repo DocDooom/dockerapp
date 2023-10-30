@@ -15,6 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'echo "Reached Deploy stage"'
+                sh 'docker ps'
             }
         }
     }
