@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   flask-app:
-    build: /flask
+    build: flask
     ports:
       - "5000:5000"
     environment:
@@ -11,6 +11,6 @@ services:
       - .:/app
 
   nginx-server:
-    build: /nginx
+    build: nginx
     ports:
       - "80:80"
