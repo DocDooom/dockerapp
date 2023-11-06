@@ -2,9 +2,11 @@ pipeline {
     agent any
     
     environment {
+        // login to docker
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
     }
     stages {
+        // Remove previous images
         stage('Remove Prev Containers & Images') {
             steps {
                 script {
