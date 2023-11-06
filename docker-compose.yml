@@ -3,10 +3,12 @@ version: '3.8'
 services:
   flask-app:
     build: flask
+    image: gabrieldesir/lab5_flask:latest
     ports:
       - "5000:5000"
 
   nginx-server:
     build: nginx
+    image: gabrieldesir/lab5_nginx:latest
     ports:
       - "80:80"
