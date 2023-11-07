@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment
+  name: flask-app-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: backend
+      app: flask-app
   template:
     metadata:
       labels:
-        app: backend
+        app: flask-app
     spec:
       containers:
-      - name: backend
+      - name: flask-app
         image: gabrieldesir/lab5_flask:latest
         ports:
         - containerPort: 5000
