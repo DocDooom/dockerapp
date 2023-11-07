@@ -3,9 +3,14 @@ kind: Deployment
 metadata:
   name: frontend-deployment
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: frontend
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
   template:
     metadata:
       labels:
