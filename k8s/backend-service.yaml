@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: flask-app
 spec:
   selector:
-    app: backend
+    app: flask-app
   ports:
     - protocol: TCP
       port: 80
